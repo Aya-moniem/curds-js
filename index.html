@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="py-5 w-75 mx-auto">
+        <h2 class="py-3 fw-bold text-center">Product Mangment System</h2>
+        <label  for="productnameinput">product name: </label>
+        <input  type="text" class="form-control mb-2" id="productnameinput">
+        <label for="productpriceinput">product price: </label>
+        <input  type="number" class="form-control mb-2" id="productpriceinput">
+        <label for="productcategoryinput">product category: </label>
+        <input  type="text" class="form-control mb-2" id="productcategoryinput">
+        <label for="productcountinput">product count: </label>
+        <input  type="number" class="form-control mb-2" id="productcountinput">
+        <button id="addBtn" onclick="addProduct()"  class="btn btn-outline-success d-block">Add</button>
+        
+    </div>
+    <h3 id="header" class="fw-bold text-center py-3"> </h3>
+    <div class="d-flex justify-content-between align-items-center" >
+        <input id="searchInput" oninput="searchProduct(this.value)" type="search" class="form-control my-3 w-25" placeholder="search for product">
+        <button  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Clear All</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">confirmation</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                        Are you sure delete all products?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button  onclick="clearAll()" type="button" data-bs-dismiss="modal" class="btn btn-danger">Delete All</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <table class="table table-striped mx-auto  border my-3 text-center">
+        <thead>
+            <th >ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>category</th>
+            <th>Count </th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+        <tbody id="tablebody">
+          
+        </tbody>
+    </table>
+   
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
